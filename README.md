@@ -90,4 +90,5 @@ Follow these steps to set up and run the backend locally:
     # or
     yarn dev
     ```
-    The API will be running locally, typically at `http://localhost:5000/api/v1`.
+    The API will be running locally, typically at `http://localhost:5000/api/`.
+    Also Vercel Live API Link: `https://b5-a7-2-portfolio-backend.vercel.app/api`
