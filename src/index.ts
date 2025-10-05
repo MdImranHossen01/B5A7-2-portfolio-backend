@@ -18,7 +18,7 @@ const app = express();
 app.use(cors({
   origin: [
     'http://localhost:3000',  // Your local frontend
-    'https://your-frontend-domain.vercel.app' // Your deployed frontend (add this later)
+    'https://b5-a7-2-portfolio-frontend.vercel.app' // Your deployed frontend (add this later)
   ],
   credentials: true, // This is essential
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'], // Be explicit about methods
