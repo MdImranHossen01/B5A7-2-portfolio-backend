@@ -12,10 +12,12 @@ const auth = async (req: AuthRequest, res: Response, next: NextFunction) => {
   if (req.headers.authorization && req.headers.authorization.startsWith('Bearer')) {
     try {
       token = req.headers.authorization.split(' ')[1];
+      // THIS IS THE CRITICAL LINE
       const decoded = jwt.verify(token, process.env.JWT_SECRET || '') as any;
       req.user = await User.findById(decoded.id).select('-password');
       next();
     } catch (error) {
+      console.error('JWT Verification Error:', error); // ADDED DEBUG LOG
       res.status(401).json({ message: 'Not authorized, token failed' });
     }
   }
