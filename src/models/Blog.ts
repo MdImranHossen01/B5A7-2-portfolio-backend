@@ -40,6 +40,5 @@ const blogSchema: Schema = new Schema({
     default: Date.now,
   },
 });
-
 const Blog = mongoose.model<IBlog>('Blog', blogSchema);
 export default Blog;
