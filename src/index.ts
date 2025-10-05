@@ -1,3 +1,5 @@
+// src/index.ts
+
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
@@ -16,10 +18,20 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// Your existing API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/blogs', blogRoutes);
 app.use('/api/projects', projectRoutes);
 app.use('/api/users', userRoutes);
+
+
+// --- ADD THIS NEW CODE ---
+// A simple root route to show the API is running
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Portfolio API is running!' });
+});
+// --- END OF NEW CODE ---
+
 
 const PORT = process.env.PORT || 5000;
 
